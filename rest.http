@@ -1,0 +1,43 @@
+###user sing up  end point 
+
+POST  http://localhost:3001/v1/user 
+Content-Type: application/json
+
+ {  
+     "name" :"nefaa",  
+     "phone" :"97212989",
+     "email"  :"nefaa07@gmail.com",
+     "password"  :"123456789"
+ } 
+
+
+
+### usr sing in endpoint  
+POST http://localhost:3001/v1/user/login
+Content-Type: application/json
+
+   {   
+     "email"  :"nefaa03@gmail.com",
+     "password"  :"123456789"
+    } 
+
+
+### get a user profile endpoint 
+GET  http://localhost:3001/v1/user/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5lZmFhMDNAZ21haWwuY29tIiwiaWF0IjoxNjQ4MjEwMjQyLCJleHAiOjE2NDgyMTAzMDJ9.i8SCNk440UwiQd9pEHianZIYz3o9yYgQXlg6IxmmduQ
+
+
+###token routers 
+
+#Get refreshed token 
+GET http://localhost:3001/v1/tokens/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5lZmFhMDNAZ21haWwuY29tIiwiaWF0IjoxNjQ4MjA1NDM1LCJleHAiOjE2NTA3OTc0MzV9.9r_zqDfmK5KOiA0ZhR1TrIYmKRKLozouXSpth973xWw
+
+###Password reset endpoints 
+
+POST http://localhost:3001/v1/user/reset-password
+Content-Type: application/json 
+
+{ 
+    "email":"nefaa03@gmail.com"
+}
