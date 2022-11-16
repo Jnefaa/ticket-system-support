@@ -1,0 +1,39 @@
+.message-history {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+
+}
+
+.message-history:nth-child(even) {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+
+}
+
+.message {
+
+  
+  padding: 0.5rem;
+  width: 80%;
+  border: 1px solid white;
+  border-radius: 0.25rem;
+background-color:lightblue;
+
+
+}
+.message1{
+  
+  padding: 0.5rem;
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 0.25rem;
+background-color:lightblue;
+}
+.sender { 
+ 
+margin-top: -9px;
+color:black;
+}
