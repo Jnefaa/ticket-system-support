@@ -25,9 +25,8 @@ router.get("/", async (req,res,next)=> {
            const accessJWT = await crateAccessJWT(`${decoded.email}`, `${userProf._id}`)
            res.json({ status:"Success", accessJWT})
         }
-     }
-     res.status (403).json({message : "forbiden"})
 
-    //2check if the jwt is exist in databases 
+     }
+
 })
 module.exports =router

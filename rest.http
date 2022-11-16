@@ -1,5 +1,7 @@
 ###user sing up  end point 
 
+
+
 POST  http://localhost:3001/v1/user 
 Content-Type: application/json
 
@@ -17,21 +19,21 @@ POST http://localhost:3001/v1/user/login
 Content-Type: application/json
 
    {   
-     "email"  :"nefaa03@gmail.com",
-     "password"  :"123456789"
+     "email"  :"nefaaaqay147@gmail.com",
+     "password"  :"nefaa@JMAL.TN451999"
     } 
 
 
 ### get a user profile endpoint 
 GET  http://localhost:3001/v1/user/
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5lZmFhMDNAZ21haWwuY29tIiwiaWF0IjoxNjQ4MjEwMjQyLCJleHAiOjE2NDgyMTAzMDJ9.i8SCNk440UwiQd9pEHianZIYz3o9yYgQXlg6IxmmduQ
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5lZmFhMDNAZ21haWwuY29tIiwiaWF0IjoxNjQ5MTE5MDMzLCJleHAiOjE2NDkyMDU0MzN9.OCubI4yzbcmlQN44vf7GLqOO2neTmnaQTALSF_QfpBg
 
 
 ###token routers 
 
 #Get refreshed token 
 GET http://localhost:3001/v1/tokens/
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5lZmFhMDNAZ21haWwuY29tIiwiaWF0IjoxNjQ4MjA1NDM1LCJleHAiOjE2NTA3OTc0MzV9.9r_zqDfmK5KOiA0ZhR1TrIYmKRKLozouXSpth973xWw
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5lZmFhMDNAZ21haWwuY29tIiwiaWF0IjoxNjQ5MTE5MDMzLCJleHAiOjE2NDkyMDU0MzN9.OCubI4yzbcmlQN44vf7GLqOO2neTmnaQTALSF_QfpBg
 
 ###Password reset endpoints 
 
@@ -41,3 +43,103 @@ Content-Type: application/json
 { 
     "email":"nefaa03@gmail.com"
 }
+
+### upadate new Password  endpoints 
+
+PATCH  http://localhost:3001/v1/user/reset-password
+Content-Type: application/json 
+
+
+{ 
+    "email":"nefaa03@gmail.com",
+    "pin": 814341            ,
+    "newpassword":"nefaa123/.A@78"
+}
+
+
+### user logout endpoint 
+
+DELETE   http://localhost:3001/v1/user/logout
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5lZmFhYXFheTE0N0BnbWFpbC5jb20iLCJpYXQiOjE2NTI4MDg5MjMsImV4cCI6MTY1MjgxMjIyM30.AfEnOubbm2uQrnRlPW6pGwqkdcxPKGd6L7RgV1-KC8I
+
+
+
+
+
+
+
+###Get all the tickets
+GET http://localhost:3001/v1/ticket
+Authorization:   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5lZmFhYXFheTE0N0BnbWFpbC5jb20iLCJpYXQiOjE2NTI3OTM0NzksImV4cCI6MTY1Mjc5Njc3OX0.UCCs-64v7tzPPhgovnWPK9ZUQSVJ0XUpQg-mv-qfre4
+
+### Get single ticket
+GET http://localhost:3001/v1/ticket/625629267822c0269cee47ba
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5lZmFhYXFheTE0N0BnbWFpbC5jb20iLCJpYXQiOjE2NTI3OTM0NzksImV4cCI6MTY1Mjc5Njc3OX0.UCCs-64v7tzPPhgovnWPK9ZUQSVJ0XUpQg-mv-qfre4
+### Reply message to the ticket
+PUT http://localhost:3001/v1/ticket/6241f05b2391de8f4c43eb4f
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5lZmFhMDNAZ21haWwuY29tIiwiaWF0IjoxNjQ5MjE5OTgxLCJleHAiOjE2NDkzMDYzODF9.hS1BSLt0NcoFgbcqN3kLRHqKPwpqGUxU2QZBT0yvI9k
+Content-Type: application/json 
+
+{ 
+    "message": "this is the 222 reply", 
+    "sender": "nefaajmaler" 
+}
+
+### Close the ticket
+PATCH http://localhost:3001/v1/ticket/close-ticket/6241f05b2391de8f4c43eb4f
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5lZmFhMDNAZ21haWwuY29tIiwiaWF0IjoxNjQ5MTI4MDkzLCJleHAiOjE2NDkyMTQ0OTN9.lNCUDnKDVrs76lU9ydNaVQPiEIsjIojj9ibGdhYZaJQ
+
+### Delete the ticket
+DELETE  http://localhost:3001/v1/ticket/6241f05b2391de8f4c43eb4f
+Authorization:  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5lZmFhMDNAZ21haWwuY29tIiwiaWF0IjoxNjQ5MTI4MDkzLCJleHAiOjE2NDkyMTQ0OTN9.lNCUDnKDVrs76lU9ydNaVQPiEIsjIojj9ibGdhYZaJQ
+
+####Login of help desk  
+POST http://localhost:3001/v1/helpdesk/login
+Content-Type: application/json
+
+   {   
+     "email"  :"helpdesk02@gmail.com",
+     "password"  :"123456789/"
+    } 
+
+
+#### insert new help desk 
+POST  http://localhost:3001/v1/helpdesk 
+Content-Type: application/json
+
+ {  
+     "name"  :"Help desk",
+     "email"  :"helpdesk02@gmail.com",
+     "password"  :"123456789/"
+ } 
+
+
+### get helpdesk profile  
+GET  http://localhost:3001/v1/helpdesk
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbHBkZXNrMDFAZ21haWwuY29tIiwiaWF0IjoxNjUxMDM0NzkzLCJleHAiOjE2NTExMjExOTN9.UKplTSMZmZ4JWUxifQu7HuRQEQLmZ5AIe4ZSE7eCavA
+
+
+### Get single ticket Help desk 
+GET http://localhost:3001/v1/ticket/helpdesk/625609cbc208254704d5ffbf
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbHBkZXNrMDJAZ21haWwuY29tIiwiaWF0IjoxNjUxMTA1MDgwLCJleHAiOjE2NTExOTE0ODB9.KOUjvPmf2OR2EASoWbxViBv8xFBRZPL8L7RkVMhec0U
+
+
+### HELP DESK PUT A MESSAGE TO USER 
+PUT http://localhost:3001/v1/ticket/helpdesk/625609cbc208254704d5ffbf
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbHBkZXNrMDJAZ21haWwuY29tIiwiaWF0IjoxNjUxMTA1MDgwLCJleHAiOjE2NTExOTE0ODB9.KOUjvPmf2OR2EASoWbxViBv8xFBRZPL8L7RkVMhec0U
+Content-Type: application/json 
+
+{ 
+    "message": "this is the 222 reply", 
+    "sender": "help desk" 
+}
+
+
+### Delete the ticket
+DELETE  http://localhost:3001/v1/ticket/delete/625629267822c0269cee47ba
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5lZmFhYXFheTE0N0BnbWFpbC5jb20iLCJpYXQiOjE2NTQwMTkwODQsImV4cCI6MTY1NDAyMjM4NH0.YysM4qbbO6ICyJRvom2YKHPpBFEb7gUfGCOeqQWGF7E
+
+
+### esclader  the ticket to admin
+POST        http://localhost:3001/v1/ticket/esclader/627e9ad9f0c1912f543d5627
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5lZmFhYXFheTE0N0BnbWFpbC5jb20iLCJpYXQiOjE2NTQ0NjcwNTgsImV4cCI6MTY1NDQ3Nzg1OH0.FigUaqwZIJedbv_6Fkc6faOB7Df_VOnVx9z9PJvSNvI

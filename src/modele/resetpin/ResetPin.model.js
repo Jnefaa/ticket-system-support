@@ -11,6 +11,7 @@ const randPin = await randomPinNumber(pinlength)
         email,
         pin:randPin,
     }
+    //console.log('Si el pin  ' ,randPin)
     return new Promise ((reslove , reject) => { 
         ResetPinSchema(resetObj)
         .save()
@@ -22,12 +23,59 @@ const randPin = await randomPinNumber(pinlength)
 }; 
 
 
+const getEmailandPin =(email,pin)=> { 
+    return new Promise ((reslove,reject)=> { 
+            
+        try { 
+            ResetPinSchema.findOne({email,pin},(error,data) => { 
+
+                if(error){ 
+                    console.log(error); 
+                    reslove(false); 
+                }
+                reslove(data)
+            })
+        
+        } catch (error) {
+            reject(error)
+            console.log("error")
+        }
+
+    })
+    
+}
+
+
+
+const deletepin =(email,pin)=> { 
+            
+        try { 
+            ResetPinSchema.findOneAndDelete({email,pin},(error,data) => { 
+
+                if(error){ 
+                    console.log(error); 
+                
+                }
+              
+            })
+        
+        } catch (error) {
+            
+            console.log("error")
+        }
+
+    
+    
+}
 
      
 module.exports ={ 
     setPasswordResetPin,
+    getEmailandPin,
+    deletepin,
     
 }
+
 
 /* 
  {  

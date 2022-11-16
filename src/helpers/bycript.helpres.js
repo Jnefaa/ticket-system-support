@@ -1,5 +1,4 @@
 const bcrypt =require('bcrypt');
-const { promise, reject } = require('bcrypt/promises');
 const saltRounds = 10; 
 
 const hashPassword = plainPassword => { 

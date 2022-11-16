@@ -18,6 +18,7 @@ const port = process.env.PORT || 3001
 const userRouter=require("./src/routers/user.router")
 const ticketRouter=require("./src/routers/ticket.router")
 const tokensRouter = require ("./src/routers/tokens.router")
+const helpdeskRouter = require ("./src/routers/helpdesk.router")
 //app security
 //app.use(helmet()) ; 
 
@@ -52,7 +53,8 @@ app.use(bodyParser.json());
 //user router 
 app.use("/v1/user",userRouter);
 app.use("/v1/ticket",ticketRouter);
-app.use("/v1/tokens",tokensRouter)
+app.use("/v1/tokens",tokensRouter) ;
+app.use("/v1/helpdesk",helpdeskRouter) ;
 
 //const handlererror
 const handleError = require('./src/utils/errorHandler') ; 
